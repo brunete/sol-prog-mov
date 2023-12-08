@@ -6,8 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key, required this.title});
+  const HomePage({super.key, required this.title, required this.visitsRepo});
+
   final String title;
+  final IVisitsRepository visitsRepo;
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -27,7 +29,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           Expanded(
             child: FutureBuilder<List<Visit>>(
-              future: _visitsRepo.getVisits(),
+              future: _visitsRepo.readVisits(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return const Center(

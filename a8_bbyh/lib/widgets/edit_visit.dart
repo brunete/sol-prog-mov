@@ -53,7 +53,7 @@ class EditVisit extends StatelessWidget {
                     date: _selectedDate,
                     description: _descriptionController.text);
 
-                _visitsRepository.editVisit(newVisit);
+                _visitsRepository.updateVisit(newVisit);
 
                 Navigator.pop(context, true);
               },

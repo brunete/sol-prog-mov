@@ -43,7 +43,7 @@ class NewVisit extends StatelessWidget {
                     status: VisitStatus.pending,
                     date: _selectedDate,
                     description: _descriptionController.text);
-                _visitsRepo.newVisit(visit);
+                _visitsRepo.createVisit(visit);
                 Navigator.pop(context, true);
               },
               child: const Text('Confirm'),
