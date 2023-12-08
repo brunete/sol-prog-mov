@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "139738666458",
+    "project_id": "a8-visits-app",
+    "storage_bucket": "a8-visits-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:139738666458:android:e493463419923c16791ce3",
+        "android_client_info": {
+          "package_name": "com.example.a8_bbyh"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDORLi5P8Di0COdU9wGVwJP9GB9M3e3Vfk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
