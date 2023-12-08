@@ -108,11 +108,38 @@ class _HomePageState extends State<HomePage> {
       },
       trailing: GestureDetector(
         onTap: () {
-          _visitsRepo.deleteVisit(visit);
-          setState(() {});
+          _showDeleteConfirmationDialog(context, visit);
         },
         child: const Icon(Icons.delete, color: Colors.red),
       ),
+    );
+  }
+
+  void _showDeleteConfirmationDialog(BuildContext context, Visit visit) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Confirm Delete'),
+          content: const Text('Are you sure you want to delete this visit?'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                _visitsRepo.deleteVisit(visit);
+                setState(() {});
+                Navigator.of(context).pop();
+              },
+              child: const Text('Delete'),
+            ),
+          ],
+        );
+      },
     );
   }
 }
